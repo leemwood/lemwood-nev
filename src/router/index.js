@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Projects from '../views/Projects.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -15,10 +16,16 @@ const routes = [
     component: Projects,
     meta: { title: '柠枺 - 项目统计' }
   },
+  {
+    path: '/404',
+    name: 'NotFound',
+    component: NotFound,
+    meta: { title: '404 - 页面未找到' }
+  },
   // 重定向处理
   {
     path: '/:pathMatch(.*)*',
-    redirect: '/'
+    component: NotFound
   }
 ]
 
