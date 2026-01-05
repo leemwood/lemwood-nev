@@ -1,9 +1,9 @@
 /**
  * 自动获取项目图标
- * @param {string} url 项目链接
- * @returns {string} 图标链接
+ * @param url 项目链接
+ * @returns 图标链接
  */
-export const getProjectIcon = (url) => {
+export const getProjectIcon = (url: string): string => {
   if (!url || url === '/') return '/logo.png';
   
   try {
@@ -17,8 +17,9 @@ export const getProjectIcon = (url) => {
 
 /**
  * 处理图片加载错误
- * @param {Event} e 错误事件
+ * @param e 错误事件
  */
-export const handleIconError = (e) => {
-  e.target.src = '/logo.png';
+export const handleIconError = (e: Event): void => {
+  const target = e.target as HTMLImageElement;
+  target.src = '/logo.png';
 };

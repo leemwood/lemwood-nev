@@ -1,9 +1,10 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import Projects from '../views/Projects.vue'
 import NotFound from '../views/NotFound.vue'
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
@@ -30,7 +31,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
@@ -43,7 +44,7 @@ const router = createRouter({
 
 // 路由守卫 - 更新页面标题
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || '柠枺'
+  document.title = (to.meta.title as string) || '柠枺'
   next()
 })
 
