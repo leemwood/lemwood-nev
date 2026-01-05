@@ -5,49 +5,94 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
   
   body {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-300 antialiased text-gray-900 dark:text-gray-100;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* 自定义滚动条 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400/30 dark:bg-gray-500/30 rounded-full hover:bg-gray-400/50 dark:hover:bg-gray-500/50 transition-colors;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 rounded-xl shadow-xl;
+    @apply backdrop-blur-xl bg-white/20 dark:bg-black/30 border border-white/30 dark:border-white/10 rounded-2xl shadow-glass transition-all duration-300;
+  }
+  
+  .glass-card:hover {
+    @apply shadow-glass-hover border-white/40 dark:border-white/20;
   }
   
   /* 无图白色模式下的卡片样式 */
   .minimal-light-mode .glass-card {
-    @apply bg-white/95 border border-gray-200 shadow-lg;
+    @apply bg-white/90 border border-gray-100 shadow-xl;
   }
   
   /* 无图暗色模式下的卡片样式 */
   .minimal-dark-mode .glass-card {
-    @apply bg-gray-800/95 border border-gray-700 shadow-lg;
+    @apply bg-gray-900/90 border border-gray-800 shadow-xl;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse-slow;
   }
   
-  /* 无图白色模式下的渐变文字 */
-  .minimal-light-mode .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent;
+  .btn-primary {
+    @apply px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all duration-300 active:scale-95 flex items-center justify-center gap-2;
   }
-  
-  /* 无图暗色模式下的渐变文字 */
-  .minimal-dark-mode .gradient-text {
-    @apply bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent;
+
+  .btn-secondary {
+    @apply px-6 py-2 glass-card hover:bg-white/30 dark:hover:bg-white/10 text-gray-800 dark:text-white rounded-xl transition-all duration-300 active:scale-95 flex items-center justify-center gap-2;
   }
-  
+
   .link-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
   }
   
-  /* 无图模式下的悬停效果 */
-  .minimal-light-mode .link-hover:hover,
-  .minimal-dark-mode .link-hover:hover {
-    @apply shadow-xl;
+  .input-field {
+    @apply w-full px-4 py-2 glass-card bg-white/10 dark:bg-black/20 focus:bg-white/20 dark:focus:bg-black/40 outline-none border border-white/20 dark:border-white/10 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-300 rounded-xl;
   }
+
+  .project-card {
+    @apply p-6 rounded-2xl bg-white/20 dark:bg-black/20 hover:bg-white/30 dark:hover:bg-black/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border border-white/10 dark:border-white/5;
+  }
+
+  /* 页面切换动画 */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* 性能优化：强制开启 GPU 加速 */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 文本平滑渲染 */
+.text-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
