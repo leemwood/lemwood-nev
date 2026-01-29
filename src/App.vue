@@ -189,6 +189,13 @@
                    alt="mcisee" class="w-6 h-6 rounded-full mr-2.5 shadow-sm" loading="lazy">
               <span class="text-gray-700 dark:text-gray-300">mcisee</span>
             </a>
+            <a href="https://serinanya.cn/" target="_blank" rel="noopener noreferrer"
+               class="flex items-center px-4 py-2 text-sm font-medium glass-card hover:bg-purple-500/10 dark:hover:bg-purple-900/20 transition-all duration-300 hover:-translate-y-1"
+               title="哇这个好可爱呀">
+              <img src="https://serinanya.cn/assets-zone-1/avatar-mahiro.webp" 
+                   alt="SerinaNya" class="w-6 h-6 rounded-full mr-2.5 shadow-sm" loading="lazy">
+              <span class="text-gray-700 dark:text-gray-300">SerinaNya</span>
+            </a>
           </div>
         </div>
         
