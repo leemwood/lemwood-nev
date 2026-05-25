@@ -1,104 +1,82 @@
 <template>
-  <div class="animate-fade-in">
-    <!-- 头部区域 -->
-    <header class="text-center mb-12 animate-fade-in">
+  <div class="max-w-4xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-20">
+    <!-- Hero -->
+    <section class="text-center mb-20 animate-fade-in">
       <div class="mb-8">
-        <img 
-          src="/logo.png" 
-          alt="Logo" 
-          class="w-24 h-24 mx-auto rounded-full shadow-2xl animate-float"
-        >
+        <img src="/logo.png" alt="Logo"
+             class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full shadow-lg ring-4 ring-white dark:ring-stone-700 animate-float">
       </div>
-      
-      <h1 class="text-5xl md:text-7xl font-bold mb-4 gradient-text animate-slide-up">
-        柠枺
-      </h1>
-      
-      <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6 animate-slide-up italic">
+      <h1 class="heading text-5xl md:text-7xl mb-4">柠枺</h1>
+      <p class="text-lg md:text-xl text-stone-500 dark:text-stone-400 italic font-display">
         "世界源于灵魂的幻想"
       </p>
-    </header>
+      <div class="mt-6 flex items-center justify-center gap-4">
+        <router-link to="/projects" class="btn-primary">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          浏览项目
+        </router-link>
+        <a href="https://github.com/leemwood" target="_blank" class="btn-ghost">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </section>
 
-    <!-- 简介卡片 -->
-    <section class="max-w-6xl mx-auto mb-12 animate-slide-up">
-      <div class="glass-card p-8 md:p-12 relative overflow-hidden group">
-        <div class="absolute -right-20 -top-20 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-colors"></div>
-        <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white flex items-center gap-3">
-          <span class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-500 text-sm">#</span>
+    <!-- 关于我 -->
+    <section class="mb-20 animate-slide-up">
+      <div class="card p-8 md:p-10">
+        <h2 class="heading text-2xl mb-6 flex items-center gap-3">
+          <span class="w-6 h-6 rounded-md bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center text-brand-600 dark:text-brand-400 text-xs font-bold">#</span>
           关于我
         </h2>
-        <div class="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300 relative z-10">
-          <p>
-            大家好，我是 <span class="text-blue-500 dark:text-blue-400 font-bold">柠枺</span>，这里是我的数字花园。
-          </p>
-          <p>
-            我是一个热衷于探索技术的开发者。虽然我常谦虚地说自己只是善于运用 AI，但我始终相信，<span class="italic text-purple-500 dark:text-purple-400">“好的工具是人类思维的延伸”</span>。
-          </p>
-          <p>
-            目前我 20 岁，来自美丽的新疆。我喜欢简洁、优雅的设计，并致力于通过代码将创意变为现实。
-          </p>
+        <div class="space-y-4 prose-custom text-base md:text-lg">
+          <p>大家好，我是 <span class="font-bold text-brand-600 dark:text-brand-400">柠枺</span>，这里是我的数字花园。</p>
+          <p>我是一个热衷于探索技术的开发者。虽然我常谦虚地说自己只是善于运用 AI，但我始终相信，<span class="italic text-stone-500 dark:text-stone-400">"好的工具是人类思维的延伸"</span>。</p>
+          <p>目前我 21 岁，来自美丽的新疆。拥有 3 年 AI 辅助编程经验，喜欢简洁、优雅的设计，并致力于通过代码将创意变为现实。</p>
         </div>
       </div>
     </section>
 
-    <!-- 联系方式 -->
-    <section class="max-w-6xl mx-auto mb-12 animate-slide-up" style="animation-delay: 0.2s">
-      <div class="glass-card p-8 md:p-12">
-        <h2 class="text-3xl font-bold mb-8 text-gray-800 dark:text-white text-center">
-          与我联络
-        </h2>
-        
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="space-y-4">
-            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 link-hover group">
-              <div class="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:rotate-12 transition-transform">
-                <span class="text-white font-bold text-xl">QQ</span>
-              </div>
-              <div>
-                <h3 class="font-bold text-gray-800 dark:text-white">QQ</h3>
-                <p class="text-gray-600 dark:text-gray-400 font-mono">3436464181</p>
-                <p class="text-[10px] text-gray-500 dark:text-gray-500 mt-1 uppercase tracking-wider">Business & Chat</p>
-              </div>
+    <!-- 联络 -->
+    <section class="mb-20 animate-slide-up" style="animation-delay: 0.15s">
+      <div class="card p-8 md:p-10">
+        <h2 class="heading text-2xl mb-8 text-center">与我联络</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex items-center gap-4 p-5 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-700/30">
+            <div class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/30 flex items-center justify-center flex-shrink-0">
+              <span class="font-bold text-brand-600 dark:text-brand-400">QQ</span>
             </div>
-
-            <a 
-              href="https://github.com/leemwood" 
-              target="_blank"
-              class="flex items-center space-x-4 p-5 rounded-2xl bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 link-hover group"
-            >
-              <div class="w-14 h-14 bg-gray-800 dark:bg-gray-700 rounded-2xl flex items-center justify-center shadow-lg shadow-black/20 group-hover:rotate-12 transition-transform">
-                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-gray-800 dark:text-white">GitHub</h3>
-                <p class="text-gray-600 dark:text-gray-400 font-mono">@leemwood</p>
-                <p class="text-[10px] text-gray-500 dark:text-gray-500 mt-1 uppercase tracking-wider">Open Source</p>
-              </div>
-            </a>
+            <div>
+              <p class="font-bold text-stone-800 dark:text-stone-200">QQ</p>
+              <p class="text-sm text-stone-500 dark:text-stone-400 font-mono">3436464181</p>
+            </div>
           </div>
-
-          <div class="space-y-4">
-            <a 
-              href="https://wiki.lemwood.cn" 
-              target="_blank"
-              class="flex items-center space-x-4 p-5 rounded-2xl bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 link-hover group"
-            >
-              <div class="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:rotate-12 transition-transform">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-bold text-gray-800 dark:text-white">个人 Wiki</h3>
-                <p class="text-gray-600 dark:text-gray-400 font-mono">wiki.lemwood.cn</p>
-                <p class="text-[10px] text-gray-500 dark:text-gray-500 mt-1 uppercase tracking-wider">Knowledge Base</p>
-              </div>
-            </a>
-
-            <div class="p-5 rounded-2xl bg-blue-500/5 border border-blue-500/20 dark:bg-blue-900/10">
-              <p class="text-sm text-blue-600 dark:text-blue-400 font-medium italic text-center">
+          <a href="https://github.com/leemwood" target="_blank"
+             class="flex items-center gap-4 p-5 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-700/30 link-accent">
+            <div class="w-12 h-12 rounded-xl bg-stone-800 dark:bg-stone-700 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.82 1.102.82 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div>
+              <p class="font-bold text-stone-800 dark:text-stone-200">GitHub</p>
+              <p class="text-sm text-stone-500 dark:text-stone-400 font-mono">@leemwood</p>
+            </div>
+          </a>
+          <a href="https://wiki.lemwood.cn" target="_blank"
+             class="flex items-center gap-4 p-5 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-700/30 link-accent">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <div>
+              <p class="font-bold text-stone-800 dark:text-stone-200">个人 Wiki</p>
+              <p class="text-sm text-stone-500 dark:text-stone-400 font-mono">wiki.lemwood.cn</p>
+            </div>
+          </a>
+          <div class="flex items-center gap-4 p-5 rounded-xl bg-brand-50 dark:bg-brand-900/10 border border-brand-200/50 dark:border-brand-700/20">
+            <div class="w-12 h-12 rounded-xl bg-brand-200/50 dark:bg-brand-800/30 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <div>
+              <p class="text-sm text-brand-600 dark:text-brand-400 font-medium italic">
                 "期待与你在数字世界相遇"
               </p>
             </div>
@@ -107,45 +85,27 @@
       </div>
     </section>
 
-    <!-- 相关项目预览 -->
-    <section class="max-w-4xl mx-auto animate-slide-up" style="animation-delay: 0.4s">
-      <div class="glass-card p-8 md:p-12">
-        <div class="flex justify-between items-center mb-10">
-          <h2 class="text-3xl font-bold text-gray-800 dark:text-white">精选项目</h2>
-          <router-link 
-            to="/projects"
-            class="group flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300"
-          >
-            <span class="text-sm font-bold">全部项目</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
+    <!-- 精选项目 -->
+    <section class="animate-slide-up" style="animation-delay: 0.3s">
+      <div class="card p-8 md:p-10 overflow-hidden">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="heading text-2xl">精选项目</h2>
+          <router-link to="/projects" class="btn-ghost text-sm gap-1">
+            全部
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
           </router-link>
         </div>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-          <a 
-            v-for="project in featuredProjects"
-            :key="project.title"
-            :href="project.url" 
-            target="_blank"
-            class="flex items-center space-x-5 p-6 rounded-2xl bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 link-hover block group"
-          >
-            <div class="relative">
-              <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white dark:bg-gray-800 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                <img 
-                  :src="getProjectIcon(project.url)" 
-                  :alt="project.title" 
-                  class="w-full h-full object-cover p-2"
-                  @error="handleIconError"
-                  loading="lazy"
-                >
-              </div>
-              <div :class="['absolute -inset-1 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity', project.color]"></div>
+        <div class="grid md:grid-cols-2 gap-4 min-w-0">
+          <a v-for="project in featuredProjects" :key="project.title"
+             :href="project.url" target="_blank"
+             class="flex items-center gap-4 p-4 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-700/30 link-accent group min-w-0">
+            <div class="w-11 h-11 rounded-xl overflow-hidden bg-white dark:bg-stone-800 shadow-sm flex-shrink-0">
+              <img :src="getProjectIcon(project.url)" :alt="project.title"
+                   class="w-full h-full object-cover p-1.5" @error="handleIconError" loading="lazy">
             </div>
-            <div>
-              <h3 class="font-bold text-gray-800 dark:text-white text-lg group-hover:text-blue-500 transition-colors">{{ project.title }}</h3>
-              <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">{{ project.description }}</p>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-bold text-stone-800 dark:text-stone-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors truncate">{{ project.title }}</h3>
+              <p class="text-sm text-stone-500 dark:text-stone-400 truncate">{{ project.description }}</p>
             </div>
           </a>
         </div>
@@ -154,21 +114,16 @@
   </div>
 </template>
 
-<script setup>
-import { getProjectIcon, handleIconError } from '../utils/icon';
+<script setup lang="ts">
+import { getProjectIcon, handleIconError } from '../utils/icon'
+import { mcProjects } from '../data/projects'
 
-const featuredProjects = [
-  {
-    title: 'FCL 下载站',
-    description: 'FoldCraftLauncher 官方资源',
-    url: 'https://foldcraftlauncher.cn',
-    color: 'bg-blue-500/20'
-  },
-  {
-    title: 'ZalithLauncher',
-    description: '现代化游戏启动器官网',
-    url: 'https://zalithlauncher.cn',
-    color: 'bg-purple-500/20'
-  }
-]
+const featuredProjects = mcProjects
+  .filter((p) => p.links.code)
+  .slice(0, 4)
+  .map((p) => ({
+    title: p.title,
+    description: p.description.length > 30 ? p.description.slice(0, 30) + '…' : p.description,
+    url: p.links.code || p.links.live || 'https://github.com/leemwood',
+  }))
 </script>

@@ -5,11 +5,11 @@
  */
 export const getProjectIcon = (url: string): string => {
   if (!url || url === '/') return '/logo.png';
-  
+
   try {
     const domain = new URL(url).hostname;
-    // 使用 Google Favicon 服务获取 128px 的图标
-    return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+    // 使用 DuckDuckGo 图标服务
+    return `https://icons.duckduckgo.com/ip3/${domain}.ico`;
   } catch (e) {
     return '/logo.png';
   }
