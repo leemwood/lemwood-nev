@@ -65,10 +65,10 @@
         <div class="mb-10 pb-10 border-b border-stone-100 dark:border-stone-800">
           <h3 class="text-xs font-bold text-stone-400 dark:text-stone-500 mb-6 uppercase tracking-widest text-center">友情链接</h3>
           <div class="flex justify-center flex-wrap gap-3">
-            <a href="https://zeinklab.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://qitry.vip" target="_blank" rel="noopener noreferrer"
                class="flex items-center gap-2 px-4 py-2 rounded-lg bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-700/30 link-accent text-sm hover:-translate-y-0.5 transition-all duration-200">
-              <img src="https://cdn.zeart.ink/gh/YShenZe/Blog-Static-Resource@main/images/202508091754715429589-27c40fedf962afbafbf31a7a06cd137b.jpg" alt="梦泽" class="w-5 h-5 rounded-full" loading="lazy">
-              梦泽
+              <img src="https://cdn.zeart.ink/gh/YShenZe/Blog-Static-Resource@main/images/202508091754715429589-27c40fedf962afbafbf31a7a06cd137b.jpg" alt="琪初" class="w-5 h-5 rounded-full" loading="lazy">
+              琪初
             </a>
             <a href="https://lovekogasa.lapis-net.top" target="_blank" rel="noopener noreferrer"
                class="flex items-center gap-2 px-4 py-2 rounded-lg bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-700/30 link-accent text-sm hover:-translate-y-0.5 transition-all duration-200">
