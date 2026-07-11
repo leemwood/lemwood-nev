@@ -1,6 +1,50 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Noto Serif SC', serif;
+  --font-body: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-brand-50: #fff7ed;
+  --color-brand-100: #ffedd5;
+  --color-brand-200: #fed7aa;
+  --color-brand-300: #fdba74;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea580c;
+  --color-brand-700: #c2410c;
+  --color-brand-800: #9a3412;
+  --color-brand-900: #7c2d12;
+
+  --color-surface-light: #faf7f2;
+  --color-surface: #ffffff;
+  --color-surface-dark: #1c1917;
+  --color-surface-dark-alt: #292524;
+
+  --animate-fade-in: fadeIn 0.6s ease-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+  --animate-scale-in: scaleIn 0.4s ease-out;
+  --animate-float: float 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes slideUp {
+  0% { transform: translateY(16px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes scaleIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
 
 @layer base {
   html {
@@ -39,7 +83,10 @@
   }
 
   .card-hover {
-    @apply card hover:-translate-y-1 hover:border-brand-300/50 dark:hover:border-brand-600/40;
+    @apply bg-white dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700/60 rounded-xl
+           shadow-sm hover:shadow-md
+           transition-all duration-300
+           hover:-translate-y-1 hover:border-brand-300/50 dark:hover:border-brand-600/40;
   }
 
   .tag {
@@ -54,12 +101,18 @@
   }
 
   .btn-primary {
-    @apply btn bg-brand-600 text-white hover:bg-brand-700
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg
+           text-sm font-bold transition-all duration-200
+           active:scale-[0.97]
+           bg-brand-600 text-white hover:bg-brand-700
            shadow-sm hover:shadow-md hover:shadow-brand-600/20;
   }
 
   .btn-ghost {
-    @apply btn text-stone-600 dark:text-stone-400
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg
+           text-sm font-bold transition-all duration-200
+           active:scale-[0.97]
+           text-stone-600 dark:text-stone-400
            hover:bg-stone-100 dark:hover:bg-stone-800;
   }
 
@@ -78,7 +131,6 @@
   }
 }
 
-/* Minimal (无背景图) 模式 */
 .minimal-light .card {
   @apply bg-white/90 border-stone-200 shadow-sm;
 }
@@ -86,15 +138,15 @@
   @apply bg-stone-900/90 border-stone-700 shadow-sm;
 }
 
-/* 背景图模式 */
 .bg-image-light {
-  @apply bg-light-bg bg-cover bg-center bg-fixed;
+  background-image: url('/bg-light.jpg');
+  @apply bg-cover bg-center bg-fixed;
 }
 .bg-image-dark {
-  @apply bg-dark-bg bg-cover bg-center bg-fixed;
+  background-image: url('/bg-dark.jpg');
+  @apply bg-cover bg-center bg-fixed;
 }
 
-/* Page transition */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s ease, transform 0.25s ease;
